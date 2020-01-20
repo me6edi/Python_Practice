@@ -165,3 +165,102 @@ print(shop_name)
 filename = 'bigdata.txt'
 print(filename.endswith('.txt'))
 print(filename.startswith('bi'))
+
+#Find word in sentence
+sentence = "A quick brown fox jumps over the lazy dog"
+print(sentence.find('fox'))
+print (sentence.find('foxs'))# -1 the value not found
+
+#Replace text
+sentence = "A quick brown fox jumps over the lazy dog"
+sentence = sentence.replace('fox','tiger')
+print (sentence)
+
+#Print separator
+x = 'Dhaka'
+y = 'Bogra'
+z = 'Comilla'
+
+print(x + ' | ' + y + ' | ' + z)
+print(x,y,z, sep = ' | ')
+
+#String interpolation
+#old style
+person = '%s\'s age is %d'
+print(person % ('Bill',55))
+
+print()
+
+#New style
+person = '{name}\'s age is {age}'
+print(person.format(name = 'Bill', age = 55))
+print(person.format(name = 'Steve', age = 50))
+
+#Formatted string literal python 3.6+
+name = 'Mark'
+age = 30
+person =f'{name}\'s age is {age}'
+print(person)
+
+#Strign slice
+name = "Tylor Swift"
+print(name[0: 6])
+print(name[:6])
+print(name[7:])
+print(name[7:-1])
+
+# # Condition
+num = 100
+if num % 2 == 0:
+    print("Even Number")
+    print("Thank You")
+
+num = input("Please enter a number:")
+num = int(num)
+if num % 2 == 0:
+    print("Even Number")
+    print("Thank you")
+else:
+    print("Odd Number")
+    print("Come Again")
+
+
+# elif number
+num = input("please enter a number:")
+num = int(num)
+if num == 50:
+    print("Half Century")
+elif num == 100:
+    print("Centuray")
+elif num > 100:
+    print("Century +")
+else:
+    print("Unknown number")
+
+#Logical operators and,or,not
+num = 6
+if 3 <= num < 5:
+    print('3 to 5')
+else:
+    print("5 +")
+
+num = 5
+if num >= 3 or num == -2:
+    print('3 + or -2')
+
+# compare string
+name1 = "Ahsan"
+name2 = "ahsan"
+
+if name1 == name2:
+    print("Same Name")
+else:
+    print("Name doesn't match")
+
+if name1.lower() == name2.lower():
+    print("Same Name by lower method")
+
+# Not equals to
+name = "Unknown Person"
+if name !="Steve Jobs":
+    print(name)
