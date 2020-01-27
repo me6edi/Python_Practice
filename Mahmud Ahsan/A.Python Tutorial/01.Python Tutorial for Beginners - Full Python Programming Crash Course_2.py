@@ -420,3 +420,138 @@ print(mix_list)
 cars = ['honda', 'toyota', 'audi']
 del cars [0]
 print( cars )
+
+#Get and remove item using pop()
+cars = ['honda', 'toyota', 'audi']
+last_car = cars.pop()#last item
+print(cars, "\n",last_car)
+
+cars = ['honda', 'toyota','audi']
+second_car = cars.pop(1) #second item
+print(cars, "\n", second_car)
+
+#Remove list item by value
+numbers = [1,2,3,4,5,6,5]
+numbers.remove(5)
+print(numbers)#Remove the first value it finds in list
+# Splitting Strng into list items
+import re
+cars = "toyota, honda, bmw, audi"
+#cars = ['toyota', 'honda', 'bmw', 'audi']
+car_list = re.split(',', cars)
+print(car_list)
+#List's string item concatnatin
+quote = ['love','is', 'blind']
+print(quote)
+quote_str = ''.join(quote)
+print(quote_str)
+
+#Sorting list
+# cars = ['toyota','honda','audi','bmw']
+# print(cars)
+# cars.sort()
+# print(cars)
+# cars.sort(reverse =True)
+# print( cars )
+
+#shorted list
+cars = ['toyota', 'honda','audi', 'bmw']
+print(sorted(cars))# doesn't affect original list
+print(cars)
+
+#REversing list
+numbers = [1,2,3,4]
+numbers.reverse()
+print(numbers)
+
+#list length
+numbers = [1,2,3,4]
+print(len(numbers))
+
+# checking value exist in list
+numbers = [1,2,3,4]
+if 2 in numbers:
+    print(" 2 is in number")
+
+if 20 not in numbers:
+    print("20 does not exist")
+
+
+# ----------------------
+#     tuple
+#----------------------
+
+#Syntax
+tp = (1,2, 'bill', 4.4, False)
+print(tp,type(tp))
+
+#this is not tuple
+a = 1,2
+print(a)
+
+s= ('hi')
+print(s, type(s))
+
+# Access
+tp = 1,2, 'bill', 4.4, False
+print(tp[0], tp[2], tp[-1], sep='|')
+
+#Iteratin
+tp = 1,2,'bill', 4.4, False
+for t in tp:
+    print(t)
+#Comparing
+t1 = 1,2,3
+t2 = 1,2,3
+if t1 == t2:
+    print("t1 and t2 values are equal")
+# Immutable
+# t1 = 1,2,3
+# t1[0] = 2
+
+# Unpacking or Multiple assignment
+t1 = 5, 7, 11
+x, y,_ = t1
+print(x,y,z, sep = ' | ')
+
+#--------------------
+#     Dictionary
+#--------------------
+#Syntax
+''''
+dict = {key : Value}
+'''
+dict = {} # empty dictionary
+dict ['name'] = 'Swift'
+dict['age'] = 55
+print(dict['name'], ' | ', dict['age'])
+
+#Dictionary len
+dict = {'bill' : '01010101','steve' : '04040404'}
+print(dict['bill'])
+print(dict['steve'])
+print(len(dict))
+
+# Modification
+shop_items_price_kg = {'rice' : 44 , 'flour' : 33}
+print(shop_items_price_kg)
+
+# Adding new item
+shop_items_price_kg['0il'] = 39
+print(shop_items_price_kg)
+
+#Deleting item
+del shop_items_price_kg['0il'] #remove key | value pair
+print(shop_items_price_kg)
+
+#Editina item
+shop_items_price_kg ['rice'] = 90
+print(shop_items_price_kg)
+
+#Iteration
+#key and  value
+asci_dict ={'a':97, 'b':98, 'c':99, 'd':100}
+
+for key, value in asci_dict.items():
+  print(key, value, sep='->')
+  print(key)
