@@ -555,3 +555,75 @@ asci_dict ={'a':97, 'b':98, 'c':99, 'd':100}
 for key, value in asci_dict.items():
   print(key, value, sep='->')
   print(key)
+
+# Iterate value only
+for value in asci_dict.values():
+    print(value)
+#Sorted keys while iterate
+shop_items_price_kg = {
+    'rice' : 44,
+    'flour': 33,
+    'oil': 33
+}
+print(shop_items_price_kg)
+print(shop_items_price_kg)
+for key in sorted (shop_items_price_kg):
+    print(key,shop_items_price_kg[key])
+# Empty set
+num_set = set()#{} reserved for dictionary
+
+## Add elements
+num_set.add(1)
+num_set.add(2)
+num_set.add(3)
+num_set.add(4)
+num_set.add(5)
+num_set.add(6)
+print(num_set)# nique values 1 i shown oly one time
+
+
+## Set operations
+set_a = {1, 2, 3, 4, 5, 1}
+set_b = {6, 5, 4, 7, 8, 8}
+print('Set A:', set_a)
+print('Set B: ',set_b)
+
+print('A-B',set_a - set_b)# items in set_a but not in set_b
+
+print("A|B", set_a | set_b) # items in set_a or set_b or both
+print('A&B', set_a & set_b)# common items in set_a and set_b
+print('A^B', set_a ^ set_b) # items in set_a or set_b but not both
+
+# Check item exist or not
+set_country = {'bangladesh', 'malaysia', 'singapore','usa'}
+country = 'bangladesh'
+if country in set_country:
+    print(country.title(), 'exists')
+#-----------------
+#    Function
+#-----------------
+
+#Define
+#sequence of statements can be defined as function
+def welcome():
+    print('Hello World')
+    for x in range(0,10):
+        print('HI',str(x))
+welcome()
+welcome()
+
+print(len('Hello world'))
+print(max(2, 4))
+
+#parameter
+def welcome(name): # name is parameter
+    print(f"Welcome {name}")
+
+welcome('Bill') # 'Bill' is argumet
+welcome('Steve')
+
+# Positional argument
+def person_details(name, age, country):
+    print(name,age,country, sep=' | ')
+person_details('Bill', 55, 'US')
+person_details('Swift', 40 , 'Canada')
