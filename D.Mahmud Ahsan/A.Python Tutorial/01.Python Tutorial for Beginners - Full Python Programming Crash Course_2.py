@@ -627,3 +627,75 @@ def person_details(name, age, country):
     print(name,age,country, sep=' | ')
 person_details('Bill', 55, 'US')
 person_details('Swift', 40 , 'Canada')
+
+#keyword argument
+def person_dtails(name, age, country):
+    print(name, age, country, sep=' | ')
+
+## argument order deesn't matter
+person_details(name = 'Bill', age = 55, country='US')
+person_details(age = 40, country = 'Canada', name ='Swift')
+
+#Default value
+def person_details(name, age, country= 'Bangladesh'):
+    print(name, age, country, sep = ' | ')
+
+    person_details(name = 'Bill', age = 55, country ='US')
+    person_details(name = 'Swift', age = 40)# default value keyword arg
+    person_details('Alam', 30) #default value positionnal org
+
+#Return value
+def square (num):
+    return num * num
+
+print(square(2), square(2.2), sep=' | ')
+
+
+def get_name(first_name, last_name):
+    return first_name + "" + last_name
+
+print(get_name('Bill', 'Gates'))
+print(get_name('Steve', 'Jobs'))
+
+
+#Optional argument
+def get_name(first_name, last_name, middle_name=''):
+    complete_name = first_name
+    if middle_name:
+        complete_name += '' + middle_name
+
+    complete_name += '' + last_name
+    return complete_name
+
+
+print(get_name('Bill', 'Gates'))
+print(get_name('Bill', 'Gates', 's'))
+
+# Function are first-class object
+def str_upper(str):
+    return str.upper()
+
+print(str_upper("hello"))
+stup = str_upper
+print(stup("hello"))
+
+
+#Function are first-clas object
+def str_upper(str):
+    return str.upper()
+
+# Function can be pased as argument
+def greetings(func):
+    greet = func("Welcome, nice to meet you")
+    print(greet)
+
+greetings(str_upper)
+
+#Function are first-Class object
+def str_upper(str):
+    return str.upper()
+
+#Functional programming
+up_list = list(map(str_upper, ["life", "is", "Cool"]))
+print(up_list)
+
