@@ -648,7 +648,7 @@ def person_details(name, age, country= 'Bangladesh'):
 def square (num):
     return num * num
 
-print(square(2), square(2.2), sep=' | ')
+print(square(2), square(2.2), sep = ' | ')
 
 
 def get_name(first_name, last_name):
@@ -680,7 +680,7 @@ stup = str_upper
 print(stup("hello"))
 
 
-#Function are first-clas object
+#Function are first-class object
 def str_upper(str):
     return str.upper()
 
@@ -699,3 +699,99 @@ def str_upper(str):
 up_list = list(map(str_upper, ["life", "is", "Cool"]))
 print(up_list)
 
+#Nested Function
+def hello_world(str):
+        def print_upper(s):
+            return s.upper()
+
+        print(print_upper(str))
+
+hello_world("mango")
+
+
+## Value Type
+num = 100
+def change_num(n):
+    n+= 100
+    print( f"Inner num: {n}")
+change_num(num)
+print( 'Outside num: ' + str(num))
+
+#Reference Type
+# List, Dictionary
+num_list = [1, 2, 3, 4, 5]
+num_dict = {'one': 1, 'two': 2, 'three': 3}
+def change_num_list(list, dict):
+    del list[0]
+    list[-1] = 50
+
+    del dict ['one']
+    dict['three'] = 33
+    print("Inner List: ", list)
+    print("Inner Dict ", dict)
+
+print("Before")
+print("Outer List: ", num_list)
+print("Outer Dict: ", num_dict)
+change_num_list(list=num_list, dict = num_dict)
+print("After")
+print("Outer List: ", num_list)
+print("Outer Dict: ",num_dict)
+#Arbitrary number of arguments
+def students(*students_name):
+    print(students_name, type(students_name))
+    for student in students_name:
+        print(student)
+
+
+students('Bill', 'Steve', 'jonathon', 'Jack', 'Bionic')
+students()
+students('Jack')
+
+# Positional and Arbitrary arguments mixing
+def students(captain, *other_students):
+    print('Captain', captain)
+    print('Others', other_students)
+
+students('Mahmud', 'Fuad', 'Emon', 'Maruf', 'Arif')
+
+# Arbitrary keyword arguments
+def students(captain, **other_students):
+    print('Captain', captain)
+    print('Others', other_students)
+
+students(captain='Mahmud', second_captain='fuad',third_captain='emon')
+
+## Arbitrary keyword arguments are optional
+students(captain='Mahmud')
+
+#----------------------
+#     Lambda
+#----------------------
+
+## Anonymos or Inline function
+add_nubers = lambda x, y: x + y #auto return lambda expression
+print(add_nubers(2,3))
+
+# Anonymous or Inline function
+bd_public = lambda name: "Bangladeshi Citizen: " + name
+print(bd_public('Mehedi'))
+
+#-------------------------
+#        Class
+#-------------------------
+# Global varible
+restaurant_name =  '7 Eleven'
+restaurant_owner =  'Mehedi'
+
+def restaurant_details():# function
+    print(restaurant_name, restaurant_owner)
+
+def another_restaurant():
+    #Local variable
+    restaurant_address = 'Bogra'
+    print(restaurant_name, restaurant_owner)
+    print(restaurant_address)
+
+restaurant_details()
+another_restaurant()
