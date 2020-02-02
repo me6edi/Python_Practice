@@ -795,3 +795,74 @@ def another_restaurant():
 
 restaurant_details()
 another_restaurant()
+
+
+#class second example
+class Person:
+    def __init__(self, name="", age=0):
+        self.name = name
+        self.age = age
+
+    def details(self):
+        print(self.name, self.age, sep=' | ')
+
+
+bill1 = Person()
+bill1.details()
+
+
+bill2 = Person('Bill', 55)#self pass automatically
+bill2.details()
+
+## Third example
+people_list = []
+for x in range(0,3):
+    person = Person("Person"+str(x), 30+x)
+    people_list += [person]
+
+for x in people_list:
+    x.details()
+
+#class variable and Instance variable Details
+class Alien:
+    legs = 5 # class variable
+
+    def __init__(self,name):
+        self.name = name #instance variable
+
+
+##Instantiation
+alien1 = Alien('Maven')
+alien2 = Alien('Woven')
+
+print(alien1.name, alien2.name)#accessing instance variable
+print(alien1.legs, alien2.legs)#accesssing class variable
+
+Alien.legs = 10
+print(alien1.legs, alien2.legs)
+
+alien1.__class__.legs = 99
+print(alien1.legs, alien2.legs)
+
+# Attribute value modification
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def change_name(self, name):
+        self.name = name
+    def details(self):
+        print(self.name, self.age, sep= ' | ')
+
+#Directly change
+person_x = Person(name='Stone Cold', age=49)
+person_x.details()
+
+
+person_x.name = "Rock"
+person_x.details()
+
+# Indirectly change by instance's method
+person_x.change_name('Triple X')
+person_x.details()
