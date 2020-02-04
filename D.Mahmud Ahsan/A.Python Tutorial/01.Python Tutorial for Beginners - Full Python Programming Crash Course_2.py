@@ -866,3 +866,106 @@ person_x.details()
 # Indirectly change by instance's method
 person_x.change_name('Triple X')
 person_x.details()
+
+# Lifecycle
+# class X:
+#     def __init__(self, name):
+#         self.name = name
+#         print(self.name + "created")
+#     def __del__(self):
+#         print(self.name + "is destroryed")
+
+
+# # uncomment this to check lifecycle
+# x = X ('X')
+# y = X('Y')
+# print("HELLLO WORLD")
+
+
+# Inheritence
+class Math: #Parent class
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def sum(self):
+        return self.x + self.y
+
+class MathExtended1 (Math): #Child class
+    def __init__(self, x, y):
+        super().__init__(x,y)#super() func makes connection to parent class with child class
+
+
+    def subtract(self):
+        return self.x - self.y
+
+math_obj = Math(2, 4)
+print(math_obj.sum())
+
+math_ext_obj = MathExtended1(10,2)
+print(math_ext_obj.subtract())
+print(math_ext_obj.sum())
+
+# Method overriding
+class Math:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def sum(self):
+        return self.x + self.y
+
+class MathExtended1 (Math): # Child class
+    def __init__(self, x, y):
+        super().__init__(x,y)
+
+    def subtract(self):
+        return self.x - self.y
+
+    def show_all(self):
+        print("Sum: " + str(self.sum()))
+        print("Subtract: " + str (self.subtract()))
+        #calling method from same class need self.
+
+
+math_ext_obj = MathExtended1(10,2)
+math_ext_obj.show_all()
+
+# Private and Public
+class Math:
+    def __init__(self, x, y):
+        self._x = x
+        self._y = y
+
+    def sum(self):
+        return self._x + self._y
+
+
+math = Math(2,4)
+print( math._x)# Wrong
+
+# Object comparison '==' vs 'is'
+x = [1, 2, 3]
+xx = x
+
+print(x == xx)
+print(x is xx)
+
+y = list(x)
+print(x == y)
+print(x is y)
+
+# String conversion of a class by __str__method
+l = [1, 2, 3]
+print(l)
+
+# class Person:
+#     def __init__(self, name):
+#         self.name = name
+#
+#     def __str__(self):
+#         return f'{self.__class__.__name__} class,
+#         obj name: {self.name}'
+#
+# p1 = Person("Bill")
+# p2 = Person("Steve")
+#
+# print(p1)
