@@ -1002,3 +1002,37 @@ list = [1, 2, 3, 4, 5]
 
 for x in range(0, 3):
     print(choice(list))
+
+## Json Data Encode and Decode
+import json
+
+data ={
+    'name' : 'Bill Gates',
+    'age'  : 55,
+    'country': 'Us',
+    'is_retired': True
+}
+
+json_encoded_str = json.dumps(data)
+print(json_encoded_str)
+
+json_decode = json.loads(json_encoded_str)
+print(json_decode)
+
+### Dumping data in file and load from file
+
+import json
+
+data ={
+    'name' : 'Bill Gates',
+    'age'  : 55,
+    'country': 'US',
+    'is_retired': True
+}
+
+with open('data.json', 'w') as f:
+    json.dump(data, f)
+
+# with open('data/json_data.json','r') as fobj:
+#     json_data = json.load(fobj)
+#     print(json_data)
