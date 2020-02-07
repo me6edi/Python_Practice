@@ -1036,3 +1036,96 @@ with open('data.json', 'w') as f:
 # with open('data/json_data.json','r') as fobj:
 #     json_data = json.load(fobj)
 #     print(json_data)
+
+
+## File existence checking
+# import os
+# if os.path.exists('data/articale.txt'):
+#     print("Yes, file exist")
+
+
+
+
+## Serialize python object to a byte stream
+
+# import pickle
+# dict_data = {
+#     'name': 'Ahsan', 'country' : 'Bangladesh'
+# }
+# with open ('data/serialize', 'wb') as fobj:
+#     pickle.dump(dict_data, fobj)
+#
+#
+# with open ('data/serialize', 'rb') as fobj:
+#     dict_data = pickle.load(fobj)
+#     print(dict_data)
+
+
+# import csv
+# with open('data/expense.csv', 'r' as fobj:
+#     fcsv = csv.reader(fobj))
+#
+# sum = 0
+# for i, row in enumerate(fcsv):
+#     print(i, row[0], row [1])
+#     sum += int (row[1] if i > 0 else 0)
+# print("Total Cost: ", sum)
+
+# Compiling pattern for reuse
+
+import re
+
+date_data = "13/Feb/2019 I will go Canada"
+
+if re.match(r'\d+/[a-zA-Z]+/\d{4}]', date_data):
+    print("Matched")
+else:
+    print("Mismatched")
+
+## Search and Replace
+
+date_pattern = re.compile(r'(\d+)/([a-zA-Z]+)/(\d{4})')
+print("Before: ", date_data)
+
+date_modify1 = date_pattern.sub(r'\3-\2-1', date_data)
+print("After: ", date_modify1)
+
+## Case-insensitive search
+
+# import re
+#
+# text = "Ï am Good, But I Am NOt very good"
+# list = re.findall('good', text, flags = re.IGNORECASE)
+# print(list)
+# text =re.sub('gOOd', 'bad', text),
+# flags = re.IGNORECASE)
+# print(text)
+
+## Unicode characters
+import re
+
+num = re.compile(r'\d+')# also show '\d+'
+list = num.findall('১২৩৮ আমার দেশ বাংলাদেশ ')
+print(list)
+
+# Strip unwanted middle space
+
+
+import re
+
+text = 'Life         is         Good'
+txtre = re.compile(r'\s+')
+text = txtre.sub('', text)
+print(text)
+
+
+# #-------------------------
+# #       Unit Test
+# #-------------------------
+#
+# from mspack import msmath
+# from mspack import msstring
+#
+# print('Sum: ', msmath.sum(10, 20))
+# print('Division: ', msmath.division(25, 5))
+# print('Full Name: ', msstring.MsName('Mahmud',"Ahsan").full_name())
