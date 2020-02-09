@@ -969,3 +969,36 @@ print(l)
 # p2 = Person("Steve")
 #
 # print(p1)
+
+#------------------------
+#        Modules
+#------------------------
+
+#------------------------
+#      Namespace
+#------------------------
+
+#------------------------
+#     Import
+#------------------------
+
+
+# import mymath
+#
+# print(mymath.sum(10, 2))
+# print(mymath.subtract(10, 2))
+#
+# ## Import class from madules
+#
+# import MyMathClass
+#
+# mmc = MyMathClass(4, 2)
+# print(mmc.sum())
+# print(mmc.subtract())
+
+
+from random import choice
+list = [1, 2, 3, 4, 5]
+
+for x in range(0, 3):
+    print(choice(list))
