@@ -1,21 +1,27 @@
-import webbrowser 
+import webbrowser
 import sys
 import time
 
 def main():
-	print('Opening Favorite Sites')\
+  print('Opening Favorite Sites')
 
-sites = "website.txt"
-browser = "chrome"
+  sites = "websites.txt"
+  browser = "chrome"
 
-webbrowser = webbrowser.get(browser)
+  if len(sys.argv) >= 2:
+    sites = sys.argv[1].lower()
 
-with open(sites) as fobj:
-	try:
-	 	for num, url in enumerate(fobj):
-	 		webbrowser.open_new_tab(url.strip())
-	 		time.sleep(1)
-	 except Exception as e:
-	 	print(e)
- 
+  if len(sys.argv) >= 3:
+    browser = sys.argv[2].lower()
+
+  wbbrowser = webbrowser.get(browser)
+
+  with open(sites) as fobj:
+    try:
+      for num, url in enumerate(fobj):
+        wbbrowser.open_new_tab(url.strip())
+        time.sleep(1)
+    except Exception as e:
+      print(e)
+
 if __name__ == '__main__': main()
