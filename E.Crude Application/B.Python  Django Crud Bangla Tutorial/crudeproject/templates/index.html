@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crude</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <form class="my-5" action="/create">
+        {% csrf_token %}
+        Name :            <input type="text" name="name" required>
+        Father Name :     <input type="text" name="fname" required>
+        Mother Name :     <input type="text" name="mname" required>
+        Age :           <input type="text" name="age" required>
+                        <input type="submit" value="Save">
+                        <input type="reset" value="Reset">
+    </form>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Father Name</th>
+            <th scope="col">Mother Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for data in data%}
+          <tr>
+            <th scope="row">1</th>
+            <td>{{data.name}}</td>
+            <td>{{data.fname}}</td>
+            <td>{{data.mname}}</td>
+            <td>{{data.age}}</td>
+            <td><a href="delete/{{data.id}}">Delete</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</body>
+</html>  
