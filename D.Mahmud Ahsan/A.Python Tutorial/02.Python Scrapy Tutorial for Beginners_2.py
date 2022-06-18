@@ -1,1 +1,0 @@
-print("Every work in shell")
