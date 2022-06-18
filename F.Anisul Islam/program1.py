@@ -7,6 +7,4 @@ print("\"Mehedi Amin\"")
 /t = tab
 /"="
 /'='
-
 '''
-
