@@ -7,7 +7,6 @@ height = float(input("Enter vertical height: "))
 area = (1/2) * base * height
 print(area)
 '''
-
 # Circle
 '''
 r = float(input("Enter radius: "))
@@ -15,7 +14,6 @@ area = 3.1416 * r * r
 print(area)
 
 '''
-
 # Rectangle
 '''
 w = float(input("Enter your width: "))

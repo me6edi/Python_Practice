@@ -1,6 +1,6 @@
-print("Mehedi\tAmin ")
-print("\"Mehedi Amin\"")
-#Comments 
+# print("Mehedi\tAmin ")
+# print("\"Mehedi Amin\"")
+# #Comments 
 
 ''' 
 /n = new line
@@ -8,3 +8,7 @@ print("\"Mehedi Amin\"")
 /"="
 /'='
 '''
+
+
+n = int(input())
+li = list(map(int,input().split())) [n:]
