@@ -21,4 +21,3 @@ h = float(input("Enter your height: "))
 area = w * h
 print(area)
 '''
-

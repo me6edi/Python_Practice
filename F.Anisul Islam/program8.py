@@ -9,6 +9,6 @@ print(type(numbers))
 num1 = 20
 num2 = 30
 # print("Sum is",num1+num2)
-print(f"Sum is: {num1} + {num2} = {num1+num2}")
-print("Mehedi Amin",end=' ')
+print(f"Sum is: {num1} + {num2} = {num1 + num2}")
+print("Mehedi Amin", end=' ')
 print("01758865276")
