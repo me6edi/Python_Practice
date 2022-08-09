@@ -12,7 +12,9 @@ Functions
 # sum = a + b
 # print(sum)
 
-from unittest import result
+# from unittest import result
+
+
 
 def add(a,b):
     sum = a + b
@@ -35,3 +37,4 @@ def message():
     print("No parameter")
 
 message()
+

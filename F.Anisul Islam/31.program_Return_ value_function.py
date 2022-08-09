@@ -1,5 +1,11 @@
-from re import A
 
+
+
+def add(a,b):
+    sum = a + b
+    return sum
+result =  add(20,30)
+print(result)
 
 def large(a,b):
     if a>b:
@@ -8,3 +14,5 @@ def large(a,b):
         return b
 
 print(large(20,30))
+
+
